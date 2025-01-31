@@ -68,7 +68,7 @@ in {
       enable = true;
       package = unstable.skhd;
     };
-    yabai = {
+    yabai = { # migrate to aerospace
       enable = true;
       package = unstable.yabai;
       enableScriptingAddition = true;

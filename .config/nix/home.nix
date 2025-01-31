@@ -30,6 +30,7 @@ in {
         _1password-cli
         # _1password-gui
         act
+        unstable.aerospace
         unstable.aider-chat
         alejandra
         argparse
@@ -60,6 +61,7 @@ in {
         fzf
         unstable.ggshield
         gh
+        # unstable.ghostty
         gnupg
         gnused
         (writeShellScriptBin "gsed" ''exec ${gnused}/bin/sed "$@" '')
@@ -84,12 +86,13 @@ in {
         # mongodb
         mprocs
         nmap
-        # unstable.ollama
+        unstable.nushell
+        unstable.ollama
         openssl
         unstable.obsidian
         # pgadmin
         pkg-config
-        unstable.postgresql
+        postgresql
         procs
         redis
         ripgrep
@@ -105,7 +108,7 @@ in {
         tree-sitter
         vim
         vscode
-        unstable.wezterm
+        unstable.wezterm # TODO: migrate to ghostty
         wget
         xclip
         xquartz
@@ -113,7 +116,7 @@ in {
         unstable.yazi
         unstable.zellij
         zoxide
-        zsh
+        zsh # TODO: migrate to nushell
       ]
       ++ lib.optionals stdenv.isDarwin [
         cocoapods
