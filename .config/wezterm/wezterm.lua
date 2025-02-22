@@ -14,7 +14,7 @@ local config = {
         top = 0,
         bottom = 0,
     },
-    window_background_opacity = 0.9,
+    window_background_opacity = 1,
     macos_window_background_blur = 25,
     font_size = 18.0,
     line_height = 1.22,

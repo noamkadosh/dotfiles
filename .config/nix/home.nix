@@ -61,7 +61,7 @@ in {
         fzf
         unstable.ggshield
         gh
-        # unstable.ghostty
+        unstable.ghostty
         gnupg
         gnused
         (writeShellScriptBin "gsed" ''exec ${gnused}/bin/sed "$@" '')
@@ -108,7 +108,6 @@ in {
         tree-sitter
         vim
         vscode
-        unstable.wezterm # TODO: migrate to ghostty
         wget
         xclip
         xquartz
