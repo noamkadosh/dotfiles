@@ -61,7 +61,7 @@ in {
         fzf
         unstable.ggshield
         gh
-        unstable.ghostty
+        # unstable.ghostty
         gnupg
         gnused
         (writeShellScriptBin "gsed" ''exec ${gnused}/bin/sed "$@" '')
@@ -80,12 +80,14 @@ in {
         luarocks
         luajit
         mdcat
-        mermaid-cli
+        # mermaid-cli # node 20.19.0 nix issue https://github.com/NixOS/nixpkgs/issues/402079
         mdl
         (writeShellScriptBin "markdownlint" ''exec ${mdl}/bin/mdl "$@" '')
         # mongodb
         mprocs
+        # unstable.neovim
         nmap
+        # unstable.nodejs
         unstable.nushell
         unstable.ollama
         openssl
@@ -99,21 +101,22 @@ in {
         rustup
         sd
         unstable.sheldon
-        nodePackages.snyk
+        # nodePackages.snyk # node 20.19.0 nix issue https://github.com/NixOS/nixpkgs/issues/402079
         starship
         statix
         stow
         tealdeer
         tokei
         tree-sitter
+        unstable.vectorcode
         vim
         vscode
         wget
         xclip
         xquartz
-        yarn
+        # yarn # node 20.19.0 nix issue https://github.com/NixOS/nixpkgs/issues/402079
         unstable.yazi
-        unstable.zellij
+        zellij
         zoxide
         zsh # TODO: migrate to nushell
       ]

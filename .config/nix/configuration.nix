@@ -20,10 +20,6 @@ in {
     };
   };
 
-  # This is needed since stateVersion is set to 5 (the GID for v5 is 350)
-  # see https://github.com/LnL7/nix-darwin/blob/7840909b00fbd5a183008a6eb251ea307fe4a76e/CHANGELOG#L1
-  ids.gids.nixbld = 30000;
-
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
@@ -68,7 +64,8 @@ in {
       enable = true;
       package = unstable.skhd;
     };
-    yabai = { # migrate to aerospace
+    yabai = {
+      # migrate to aerospace
       enable = true;
       package = unstable.yabai;
       enableScriptingAddition = true;
