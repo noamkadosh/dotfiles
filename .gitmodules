@@ -1,18 +1,18 @@
-[submodule ".config/nvim"]
-	path = .config/nvim
+[submodule "config/nvim"]
+	path = config/nvim
 	url = git@github.com:noamkadosh/nvim.git
 	branch = main
 	update = rebase
-[submodule ".config/zellij/statusbar"]
-	path = .config/zellij/statusbar
+[submodule "config/zellij/statusbar"]
+	path = config/zellij/statusbar
 	url = git@github.com:noamkadosh/statusbar.git
 	branch = main
 	update = rebase
-[submodule ".config/obsidian"]
-	path = .config/obsidian
+[submodule "config/obsidian"]
+	path = config/obsidian
 	url = git@github.com:noamkadosh/obsidian.git
 	branch = main
 	update = rebase
-[submodule ".config/keyboard"]
-	path = .config/keyboard
+[submodule "config/keyboard"]
+	path = config/keyboard
 	url = git@github.com:noamkadosh/keyboard.git

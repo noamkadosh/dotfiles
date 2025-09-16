@@ -14,6 +14,7 @@
 in {
   system = {
     stateVersion = 5;
+    primaryUser = "noam";
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToEscape = true;
@@ -21,6 +22,7 @@ in {
   };
 
   nix = {
+    enable = true;
     settings = {
       experimental-features = "nix-command flakes";
       substituters = [
@@ -33,10 +35,7 @@ in {
         "@admin"
       ];
     };
-    configureBuildUsers = true;
-
     package = pkgs.nixVersions.stable;
-
     extraOptions =
       ''
         auto-optimise-store = true
@@ -59,7 +58,6 @@ in {
   };
 
   services = {
-    nix-daemon.enable = true;
     skhd = {
       enable = true;
       package = unstable.skhd;
@@ -72,5 +70,5 @@ in {
     };
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 }

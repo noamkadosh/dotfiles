@@ -16,7 +16,7 @@ else
 fi
 
 # Enable nix-command and flakes to bootstrap 
-\cat <<EOF > ~/.dotfiles/.config/nix/nix.conf
+\cat <<EOF > ~/dotfiles/config/nix/nix.conf
 experimental-features = nix-command flakes
 EOF
 
@@ -28,8 +28,8 @@ fi
 mv /etc/nix/nix.conf /etc/nix/.nix-darwin.bkp.nix.conf || die "Failed to move nix.conf"
 
 # Build configuration
-/nix/var/nix/profiles/default/bin/nix build $HOME/.dotfiles/.config/nix#darwinConfigurations.Noam.system || die "Failed to build nix"
-$HOME/result/sw/bin/darwin-rebuild switch --flake $HOME/.dotfiles/.config/nix#Noam || die "Failed to switch to flake"
+/nix/var/nix/profiles/default/bin/nix build $HOME/dotfiles/config/nix#darwinConfigurations.Noam.system || die "Failed to build nix"
+$HOME/result/sw/bin/darwin-rebuild switch --flake $HOME/dotfiles/config/nix#Noam || die "Failed to switch to flake"
 
 [ -f "$HOME/.zshrc" ] && \. "$HOME/.zshrc"
 

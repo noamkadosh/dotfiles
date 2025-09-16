@@ -31,7 +31,7 @@ in {
         # _1password-gui
         act
         unstable.aerospace
-        unstable.aider-chat
+        # unstable.aider-chat
         alejandra
         argparse
         avrdude
@@ -42,6 +42,7 @@ in {
         # blackbox
         bottom
         cachix
+        unstable.claude-code
         cloudflared
         comma
         coreutils
@@ -59,7 +60,7 @@ in {
         flyctl
         fontforge
         fzf
-        unstable.ggshield
+        ggshield
         gh
         # unstable.ghostty
         gnupg
@@ -89,9 +90,10 @@ in {
         nmap
         # unstable.nodejs
         unstable.nushell
-        unstable.ollama
-        openssl
         unstable.obsidian
+        unstable.ollama
+        unstable.opencode
+        openssl
         # pgadmin
         pkg-config
         postgresql
