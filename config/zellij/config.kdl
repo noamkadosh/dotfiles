@@ -1,7 +1,7 @@
 mouse_mode false
 pane_frames true
 copy_command "xclip -selection clipboard"
-theme "tokyo-night"
+theme "tokyo-night-dark"
 default_layout "default"
 plugins {
     tab-bar { path "tab-bar"; }
