@@ -14,8 +14,8 @@ layout {
             terminal name="TERMINAL" cwd="Developer/nk"
         }
         pane split_direction="vertical" {
-            editor name="EDITOR" size="60%" cwd="Developer/nk"
-            ai name="AI AGENT" size="40%" command="opencode"
+            editor name="EDITOR" size="65%" cwd="Developer/nk"
+            ai name="AI AGENT" size="35%" cwd="Developer/nk" command="opencode"
         }
         statusbar size=1 borderless=true
     }
@@ -24,8 +24,8 @@ layout {
             terminal name="TERMINAL" cwd="dotfiles"
         }
         pane split_direction="vertical" {
-            editor name="EDITOR" size="60%" cwd="dotfiles"
-            ai name="AI AGENT" size="40%" command="opencode"
+            editor name="EDITOR" size="65%" cwd="dotfiles"
+            ai name="AI AGENT" size="35%" cwd="dotfiles" command="opencode"
         }
         statusbar size=1 borderless=true
     }

@@ -15,6 +15,7 @@ command_timeout = 30000 # 30 seconds
 [character]
 success_symbol = "[▶](fg:#9ECE6A)"
 error_symbol = "[▶](fg:#F93357)"
+vimcmd_symbol = "[▶](fg:#7AA2F7)"
 
 [status]
 format = '[$status]($style) '

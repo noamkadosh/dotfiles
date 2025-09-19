@@ -1,5 +1,5 @@
 mouse_mode false
-pane_frames true
+pane_frames false
 copy_command "xclip -selection clipboard"
 theme "tokyo-night-dark"
 default_layout "default"
