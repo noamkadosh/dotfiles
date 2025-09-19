@@ -5,7 +5,7 @@ layout {
     pane_template name="terminal"
     pane_template name="statusbar" {
         // NOTE: Zellij wants absolute path only
-        plugin location="file:///Users/noam/dotfiles/config/zellij/plugins/statusbar.wasm"
+        plugin location="file:///Users/noam/Developer/dotfiles/config/zellij/plugins/statusbar.wasm"
     }
 
     // Tab templates
@@ -21,19 +21,19 @@ layout {
     }
     tab_template name="dotfiles" {
         floating_panes {
-            terminal name="TERMINAL" cwd="dotfiles"
+            terminal name="TERMINAL" cwd="Developer/dotfiles"
         }
         pane split_direction="vertical" {
-            editor name="EDITOR" size="65%" cwd="dotfiles"
-            ai name="AI AGENT" size="35%" cwd="dotfiles" command="opencode"
+            editor name="EDITOR" size="65%" cwd="Developer/dotfiles"
+            ai name="AI AGENT" size="35%" cwd="Developer/dotfiles" command="opencode"
         }
         statusbar size=1 borderless=true
     }
     tab_template name="notes" {
         floating_panes {
-            terminal name="TERMINAL" cwd="dotfiles/config/obsidian"
+            terminal name="TERMINAL" cwd="Developer/dotfiles/config/obsidian"
         }
-        editor name="EDITOR" cwd="dotfiles/config/obsidian"
+        editor name="EDITOR" cwd="Developer/dotfiles/config/obsidian"
         statusbar size=1 borderless=true
     }
 
