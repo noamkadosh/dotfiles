@@ -27,5 +27,5 @@ $(command -v bat) cache --build || die "Failed to build bat cache"
 # Obsidian
 [ -e "$HOME/config/obsidian" -a ! -L "$HOME/obsidian" ] && ln -s "$HOME/config/obsidian" "$HOME/obsidian" || die "Failed to create Obsidian symlink"
 
-stow --dotfiles ~ home
-stow --dotfiles ~/.config config
+stow --dotfiles --target ~ home
+stow --dotfiles --target ~/.config config

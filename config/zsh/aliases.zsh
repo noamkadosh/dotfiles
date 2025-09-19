@@ -35,9 +35,9 @@ alias px="pnpm dlx"
 alias y="yarn"
 
 # Nix aliases
-alias nixbuild="nix build --out-link ~/result $HOME/dotfiles/config/nix#darwinConfigurations.Noam.system"
-alias nixswitch="sudo $HOME/result/sw/bin/darwin-rebuild switch --flake $HOME/dotfiles/config/nix#Noam"
-alias nixupdate="nix flake update ~/dotfiles/config/nix/"
+alias nixbuild="nix build --out-link ~/result $HOME/Developer/dotfiles/config/nix#darwinConfigurations.Noam.system"
+alias nixswitch="sudo $HOME/result/sw/bin/darwin-rebuild switch --flake $HOME/Developer/dotfiles/config/nix#Noam"
+alias nixupdate="nix flake update ~/Developer/dotfiles/config/nix/"
 alias nixupgrade="sudo -i sh -c 'nix-channel --update && nix-env --install --attr nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'"
 alias reloadnixdaemon="sudo launchctl unload /Libray/LaunchDaemons/org.nixos.nix-daemon.plist && sudo launchctl load /Libray/LaunchDaemons/org.nixos.nix-daemon.plist"
 
