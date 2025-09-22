@@ -2,7 +2,7 @@ tab_template name="ui" {
     children
     pane size=1 {
         // FIXME: Zellij wants absolute path only
-        plugin location="file:///Users/noam/config/zellij/plugins/statusbar.wasm"
+        plugin location="file:///Users/noam/Developer/config/zellij/plugins/statusbar.wasm"
     }
 }
 
