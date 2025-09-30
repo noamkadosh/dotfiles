@@ -26,3 +26,7 @@ if [ -f "/Users/noam/.docker/init-zsh.sh" ]; then
     source /Users/noam/.docker/init-zsh.sh || true
 fi
 
+# SSH
+eval "$(ssh-agent -s)" &>/dev/null
+ssh-add --apple-use-keychain ~/.ssh/homeserver &>/dev/null
+ssh-add --apple-use-keychain ~/.ssh/github &>/dev/null

@@ -3,22 +3,13 @@ layout {
     pane_template name="editor"
     pane_template name="ai"
     pane_template name="terminal"
+    pane_template name="ssh"
     pane_template name="statusbar" {
         // NOTE: Zellij wants absolute path only
         plugin location="file:///Users/noam/Developer/dotfiles/config/zellij/plugins/statusbar.wasm"
     }
 
     // Tab templates
-    tab_template name="nk" {
-        floating_panes {
-            terminal name="TERMINAL" cwd="Developer/nk"
-        }
-        pane split_direction="vertical" {
-            editor name="EDITOR" size="65%" cwd="Developer/nk"
-            ai name="AI AGENT" size="35%" cwd="Developer/nk" command="opencode"
-        }
-        statusbar size=1 borderless=true
-    }
     tab_template name="dotfiles" {
         floating_panes {
             terminal name="TERMINAL" cwd="Developer/dotfiles"
@@ -29,11 +20,28 @@ layout {
         }
         statusbar size=1 borderless=true
     }
+    tab_template name="homeserver" {
+        ssh name="HOMESERVER" {
+            command "ssh"
+            args "admin@homeserver"
+        }
+        statusbar size=1 borderless=true
+    }
     tab_template name="notes" {
         floating_panes {
             terminal name="TERMINAL" cwd="Developer/dotfiles/config/obsidian"
         }
         editor name="EDITOR" cwd="Developer/dotfiles/config/obsidian"
+        statusbar size=1 borderless=true
+    }
+    tab_template name="nk" {
+        floating_panes {
+            terminal name="TERMINAL" cwd="Developer/nk"
+        }
+        pane split_direction="vertical" {
+            editor name="EDITOR" size="65%" cwd="Developer/nk"
+            ai name="AI AGENT" size="35%" cwd="Developer/nk" command="opencode"
+        }
         statusbar size=1 borderless=true
     }
 
@@ -43,7 +51,8 @@ layout {
     }
 
     // Layout
-    nk name="NK" focus=true
-    dotfiles name="DOTFILES"
+    dotfiles name="DOTFILES" focus=true
+    homeserver name="HOMESERVER"
     notes name="NOTES"
+    nk name="NK"
 }
