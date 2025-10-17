@@ -57,18 +57,5 @@ in {
     nix-index.enable = true;
   };
 
-  services = {
-    skhd = {
-      enable = true;
-      package = unstable.skhd;
-    };
-    yabai = {
-      # migrate to aerospace
-      enable = true;
-      package = unstable.yabai;
-      enableScriptingAddition = true;
-    };
-  };
-
   security.pam.services.sudo_local.touchIdAuth = true;
 }

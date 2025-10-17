@@ -14,10 +14,11 @@ layout {
         floating_panes {
             terminal name="TERMINAL" cwd="Developer/dotfiles"
         }
-        pane split_direction="vertical" {
-            editor name="EDITOR" size="65%" cwd="Developer/dotfiles"
-            ai name="AI AGENT" size="35%" cwd="Developer/dotfiles" command="opencode"
-        }
+        editor name="EDITOR" cwd="Developer/dotfiles"
+        // pane split_direction="vertical" {
+        //     editor name="EDITOR" size="65%" cwd="Developer/dotfiles"
+        //     ai name="AI AGENT" size="35%" cwd="Developer/dotfiles" command="opencode"
+        // }
         statusbar size=1 borderless=true
     }
     tab_template name="homeserver" {
@@ -38,10 +39,11 @@ layout {
         floating_panes {
             terminal name="TERMINAL" cwd="Developer/nk"
         }
-        pane split_direction="vertical" {
-            editor name="EDITOR" size="65%" cwd="Developer/nk"
-            ai name="AI AGENT" size="35%" cwd="Developer/nk" command="opencode"
-        }
+        editor name="EDITOR" cwd="Developer/nk"
+        // pane split_direction="vertical" {
+        //     editor name="EDITOR" size="65%" cwd="Developer/nk"
+        //     ai name="AI AGENT" size="35%" cwd="Developer/nk" command="opencode"
+        // }
         statusbar size=1 borderless=true
     }
 
