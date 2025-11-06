@@ -1,6 +1,232 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "claude-sonnet-4-5-20250929",
+  "model": "claude-sonnet-4-5",
+  "small_model": "anthropic/claude-haiku-4-20250514",
   "theme": "system",
   "share": "disabled",
+  "instructions": [
+    "AGENTS.md",
+    "./docs/*.md",
+    "packages/*/AGENTS.md",
+    ".cursor/rules/*.md",
+    "CONTRIBUTING.md"
+  ],
+  "tools": {
+    "write": true,
+    "edit": true,
+    "bash": true,
+    "read": true,
+    "grep": true,
+    "glob": true,
+    "list": true,
+    "webfetch": true,
+    "universal_gateway": true,
+    "base_gateway": true,
+    "specialist_gateway": false,
+    "frontend_gateway": false,
+    "backend_gateway": false,
+    "database_gateway": false,
+    "test_gateway": false,
+    "infrastructure_gateway": false,
+    "documentation_gateway": false
+  },
+  "permission": {
+    "edit": "allow",
+    "bash": {
+      "git status": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git add*": "ask",
+      "git commit*": "ask",
+      "git push*": "ask",
+      "npm test*": "allow",
+      "npm run test*": "allow",
+      "npm install": "ask",
+      "npm ci": "ask",
+      "rm -rf*": "deny",
+      "rm -fr*": "deny",
+      "npm publish*": "ask",
+      "yarn publish*": "ask",
+      "docker*": "ask",
+      "*": "ask"
+    },
+    "webfetch": "ask"
+  },
+  "agent": {
+    "build": {
+      "description": "Default agent for building and modifying code",
+      "mode": "primary",
+      "model": "claude-sonnet-4-5",
+      "temperature": 0.2,
+      "topP": 0.95,
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "universal_gateway": true,
+        "base_gateway": true
+      },
+      "permission": {
+        "bash": { "git push*": "ask", "rm -rf*": "deny", "npm publish*": "ask" }
+      }
+    },
+    "plan": {
+      "description": "Planning agent for analyzing code without modifications",
+      "mode": "primary",
+      "model": "claude-sonnet-4-5",
+      "temperature": 0.1,
+      "topP": 0.9,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false,
+        "universal_gateway": true,
+        "base_gateway": true
+      }
+    }
+  },
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-sonnet-4-5": {
+          "options": {
+            "thinking": { "type": "enabled", "budgetTokens": 10000 }
+          }
+        },
+        "claude-opus-4-1": {
+          "options": {
+            "thinking": { "type": "enabled", "budgetTokens": 16000 }
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "universal_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "sequentialthinking,git"
+      ],
+      "enabled": true
+    },
+    "base_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "github-official"
+      ],
+      "enabled": true
+    },
+    "specialist_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "context7"
+      ],
+      "enabled": true
+    },
+    "frontend_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "next-devtools-mcp"
+      ],
+      "enabled": true
+    },
+    "backend_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        ""
+      ],
+      "enabled": true
+    },
+    "database_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "postgres"
+      ],
+      "enabled": true
+    },
+    "test_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "playwright"
+      ],
+      "enabled": true
+    },
+    "infrastructure_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "aws-core-mcp-server,aws-documentation,docker"
+      ],
+      "enabled": true
+    },
+    "documentation_gateway": {
+      "type": "local",
+      "command": [
+        "docker",
+        "mcp",
+        "gateway",
+        "run",
+        "--secrets",
+        "./.env",
+        "--servers",
+        "obsidian"
+      ],
+      "enabled": true
+    }
+  }
 }
