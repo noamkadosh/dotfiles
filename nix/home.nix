@@ -110,7 +110,6 @@ in {
         tealdeer
         tokei
         tree-sitter
-        unstable.vectorcode
         vim
         vscode
         wget
