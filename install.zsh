@@ -7,7 +7,7 @@ curl https://get.volta.sh | bash || die "Failed to install Volta"
 ~/.volta/bin/volta install pnpm || die "Failed to install pnpm via Volta"
 
 # Nix
-\. "$HOME/config/nix/install.zsh" || die "Failed to install Nix"
+\. "./nix/install.zsh" || die "Failed to install Nix"
 
 # Rust
 $(command -v rustup) default stable || die "Failed to install Rust"
@@ -24,8 +24,8 @@ $(command -v rustup) default stable || die "Failed to install Rust"
 # Bat
 $(command -v bat) cache --build || die "Failed to build bat cache"
 
-# Obsidian
-[ -e "$HOME/config/obsidian" -a ! -L "$HOME/obsidian" ] && ln -s "$HOME/config/obsidian" "$HOME/obsidian" || die "Failed to create Obsidian symlink"
-
 stow --dotfiles --target ~ home
-stow --dotfiles --target ~/.config config
+stow --dotfiles --target ~/.config dot-config
+
+stow --target ~/.config/opencode ai/clients/opencode
+stow --target ~/.config/nvim nvim

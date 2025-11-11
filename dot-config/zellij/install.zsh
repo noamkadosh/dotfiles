@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-ZELLIJ_STATUSBAR_SRC="$HOME/dotfiles/config/zellij/plugins_src/statusbar"
-ZELLIJ_STATUSBAR_DIST="$HOME/dotfiles/config/zellij/plugins"
+ZELLIJ_STATUSBAR_SRC="$HOME/dotfiles/zellij-statusbar"
+ZELLIJ_STATUSBAR_DIST="$HOME/.config/zellij/plugins"
 ZELLIJ_STATUSBAR_BIN="statusbar.wasm"
 
 $(command -v rustup) target add wasm32-wasip1

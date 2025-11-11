@@ -1,18 +1,21 @@
-[submodule "config/nvim"]
-	path = config/nvim
+[submodule "dot-config/nvim"]
+	path = nvim
 	url = git@github.com:noamkadosh/nvim.git
 	branch = main
 	update = rebase
-[submodule "config/zellij/statusbar"]
-	path = config/zellij/statusbar
+[submodule "dot-config/zellij/statusbar"]
+	path = zellij-statusbar
 	url = git@github.com:noamkadosh/statusbar.git
 	branch = main
 	update = rebase
-[submodule "config/obsidian"]
-	path = config/obsidian
+[submodule "dot-config/obsidian"]
+	path = obsidian
 	url = git@github.com:noamkadosh/obsidian.git
 	branch = main
 	update = rebase
-[submodule "config/keyboard"]
-	path = config/keyboard
+[submodule "dot-config/keyboard"]
+	path = keyboard
 	url = git@github.com:noamkadosh/keyboard.git
+[submodule "ai"]
+	path = ai
+	url = git@github.com:noamkadosh/ai-stack.git

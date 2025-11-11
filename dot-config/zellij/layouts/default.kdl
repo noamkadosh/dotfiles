@@ -6,7 +6,7 @@ layout {
     pane_template name="ssh"
     pane_template name="statusbar" {
         // NOTE: Zellij wants absolute path only
-        plugin location="file:///Users/noam/Developer/dotfiles/config/zellij/plugins/statusbar.wasm"
+        plugin location="file:///Users/noam/Developer/dotfiles/dot-config/zellij/plugins/statusbar.wasm"
     }
 
     // Tab templates
@@ -30,9 +30,9 @@ layout {
     }
     tab_template name="notes" {
         floating_panes {
-            terminal name="TERMINAL" cwd="Developer/dotfiles/config/obsidian"
+            terminal name="TERMINAL" cwd="Developer/dotfiles/dot-config/obsidian"
         }
-        editor name="EDITOR" cwd="Developer/dotfiles/config/obsidian"
+        editor name="EDITOR" cwd="Developer/dotfiles/dot-config/obsidian"
         statusbar size=1 borderless=true
     }
     tab_template name="nk" {
