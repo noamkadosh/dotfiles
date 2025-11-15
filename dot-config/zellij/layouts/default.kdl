@@ -30,9 +30,9 @@ layout {
     }
     tab_template name="notes" {
         floating_panes {
-            terminal name="TERMINAL" cwd="Developer/dotfiles/dot-config/obsidian"
+            terminal name="TERMINAL" cwd="Developer/dotfiles/obsidian"
         }
-        editor name="EDITOR" cwd="Developer/dotfiles/dot-config/obsidian"
+        editor name="EDITOR" cwd="Developer/dotfiles/obsidian"
         statusbar size=1 borderless=true
     }
     tab_template name="nk" {
